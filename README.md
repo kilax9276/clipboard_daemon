@@ -88,6 +88,12 @@ Run the daemon in an X11 session:
 ./clipboard-daemon
 ```
 
+In a Docker container, we do the following:
+```sh
+NO_AT_BRIDGE=1 DISPLAY=:3 ./clipboard-daemon
+```
+
+
 The daemon listens on the following Unix domain socket:
 
 ```text
