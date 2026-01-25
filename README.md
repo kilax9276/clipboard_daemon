@@ -105,6 +105,10 @@ To copy a file into the clipboard:
 ```sh
 echo "copy /path/to/file.png" | socat - UNIX-CONNECT:/run/gtk-clipboard-daemon.sock
 ```
+or
+```sh
+echo "copy /path/to/file.png" | nc -U /run/gtk-clipboard-daemon.sock
+```
 
 What happens internally:
 
