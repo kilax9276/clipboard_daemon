@@ -115,6 +115,16 @@ or
 ```sh
 echo "copy /path/to/file.png" | nc -U /run/gtk-clipboard-daemon.sock
 ```
+The ability to work with multi-line text data has been added.
+```sh
+c -U /run/gtk-clipboard-daemon.sock <<'EOF'
+text-begin
+Hello world
+Line 2
+Unicode: TeXt EXAMPLE
+text-end
+EOF
+```
 
 What happens internally:
 
