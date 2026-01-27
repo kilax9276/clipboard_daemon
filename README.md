@@ -88,6 +88,12 @@ Run the daemon in an X11 session:
 ./clipboard-daemon
 ```
 
+In a Docker container, we do the following:
+```sh
+NO_AT_BRIDGE=1 DISPLAY=:3 ./clipboard-daemon
+```
+
+
 The daemon listens on the following Unix domain socket:
 
 ```text
@@ -104,6 +110,10 @@ To copy a file into the clipboard:
 
 ```sh
 echo "copy /path/to/file.png" | socat - UNIX-CONNECT:/run/gtk-clipboard-daemon.sock
+```
+or
+```sh
+echo "copy /path/to/file.png" | nc -U /run/gtk-clipboard-daemon.sock
 ```
 
 What happens internally:
