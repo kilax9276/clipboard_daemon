@@ -1,3 +1,6 @@
+
+//copyright "Kilax @kilax9276"
+
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 #include <string.h>
